@@ -1,12 +1,16 @@
 import argparse
 import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
 import numpy as np
 import torch
 import torchvision
 from datasets_prep import get_dataset
-from .fid_score import compute_statistics_of_path
-from .inception import InceptionV3
+from fid_score import compute_statistics_of_path
+from inception import InceptionV3
 from tqdm import tqdm
 
 

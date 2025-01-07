@@ -626,8 +626,11 @@ class UNetModel(nn.Module):
         if self.count_nfe:
             self.nfe += 1
         hs = []
+        # print(f"pos 1, {timesteps}")
+        # print(f"pos 1, {x.shape}")
         if timesteps.view(-1, 1).size(0) != x.size(0):
             timesteps = timesteps * th.ones(x.size(0), device="cuda")
+            # print(f"pos 2, {th.ones(x.size(0), device='cuda').shape}")
 
         hs = []
         emb = (

@@ -18,9 +18,9 @@ if [[ "${USE_ORIGIN_ADM}" = true ]]; then
         --master_port $MASTER_PORT --num_process_per_node 1 \
         --method ${METHOD} --num_steps ${STEPS} \
         --model_type ${MODEL_TYPE} --use_origin_adm \
-        # --measure_time \
+        --measure_time \
+        --compute_nfe \
         # --use_karras_samplers \
-        # --compute_nfe \
 
 else
     python test_flow_latent.py --exp ${EXP} \
@@ -30,8 +30,8 @@ else
         --master_port $MASTER_PORT --num_process_per_node 1 \
         --method ${METHOD} --num_steps ${STEPS} \
         --model_type ${MODEL_TYPE} --num_classes 1 --label_dropout 0. \
-        # --measure_time \
+        --measure_time \
+        --compute_nfe \
         # --use_karras_samplers \
-        # --compute_nfe \
 
 fi

@@ -9,7 +9,7 @@ if [ -z "$BASE_CH" ]; then BASE_CH=256; fi
 
 export PYTHONPATH=$(pwd):$PYTHONPATH
 
-NUM_GPUS=8
+NUM_GPUS=8 # change this
 OUTPUT_LOG=${EXP}_${EPOCH_ID}_${METHOD}${STEPS}.log
 
 if [[ "${USE_ORIGIN_ADM}" = true ]]; then

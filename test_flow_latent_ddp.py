@@ -259,5 +259,11 @@ if __name__ == "__main__":
     parser.add_argument("--master_address", type=str, default="127.0.0.1", help="address for master")
     parser.add_argument("--master_port", type=str, default="6000", help="port for master")
 
+    # added by sqa
+    parser.add_argument("--layout", action="store_true") # 否则不能跑
+    parser.add_argument("--use_scale_shift_norm", type=bool, default=True) # 否则不能跑
+    parser.add_argument("--resblock_updown", type=bool, default=False) # 否则不能跑
+    parser.add_argument("--use_new_attention_order", type=bool, default=False) # 否则不能跑
+
     args = parser.parse_args()
     main(args)

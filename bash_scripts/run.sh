@@ -1,7 +1,8 @@
 ############################################### ADM ~ CelebA 256 ###############################################
-# sqa: remove --f 8
+# sqa: remove --f 8 (这个没影响)
+# sqa: batch_size 112 -> 2
 accelerate launch --num_processes 1 train_flow_latent.py --exp celeb256_f8_adm \
-    --dataset celeba_256 --datadir ../cnf_flow/data/celeba/celeba-lmdb \
+    --dataset celeba_256 --datadir ../data/celeba/celeba-lmdb \
     --batch_size 112 --num_epoch 500 \
     --image_size 256 --num_in_channels 4 --num_out_channels 4 \
     --nf 256 --ch_mult 1 2 2 2 --attn_resolution 16 8 --num_res_blocks 2 \
