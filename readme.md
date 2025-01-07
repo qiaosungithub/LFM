@@ -8,7 +8,7 @@ conda activate LFM
 pip install -r requirements.txt
 ```
 
-## Dataset preparation (LFM)
+## Dataset preparation
 
 1. Follow [this repo](https://github.com/qiaosungithub/celebahq256.git) and get dataset in `../data/celeba/celeba-lmdb`.
 
@@ -54,7 +54,7 @@ bash bash_scripts/run_test.sh test_args/celeb256_adm.txt
 
 Here is a bug (shape), run the one below!!!!!!
 
-> Only 1 gpu is required.
+<!-- > Only 1 gpu is required. -->
 
 #### Note (LFM)
 
