@@ -1,61 +1,16 @@
-##### Table of contents
+# Flow Matching in Latent Space with SQA documentation
 
-1. [Installation](#installation)
-2. [Dataset preparation](#dataset-preparation)
-3. [Training](#training)
-4. [Testing](#testing)
-5. [Acknowledgments](#acknowledgments)
-6. [Contacts](#contacts)
-
-# Official PyTorch implementation of "Flow Matching in Latent Space"
-
-<div align="center">
-  <a href="https://quandao10.github.io/" target="_blank">Quan&nbsp;Dao</a> &emsp; <b>&middot;</b> &emsp;
-  <a href="https://hao-pt.github.io/" target="_blank">Hao&nbsp;Phung</a> &emsp; <b>&middot;</b> &emsp;
-  <a href="https://tbng.github.io/" target="_blank">Binh&nbsp;Nguyen</a> &emsp; <b>&middot;</b> &emsp;
-  <a href="https://sites.google.com/site/anhttranusc/" target="_blank">Anh&nbsp;Tran</a>
-  <br> <br>
-  <a href="https://www.vinai.io/">VinAI Research</a>
-  <br> <br>
-  &emsp;&emsp;<a href="https://vinairesearch.github.io/LFM/">[Page]</a> &emsp;&emsp;
-  <a href="https://arxiv.org/abs/2307.08698">[Paper]</a> &emsp;&emsp;
-  <!-- <a href="https://drive.google.com/file/d/1LSEYfdhS4Zjtx1VRrctmVt6xjEjgmpVA/view?usp=sharing">[Poster]</a> &emsp;&emsp;
-  <a href="https://drive.google.com/file/d/11JE-RFtYJWx6XdXH8zZxgzRAvGJ6-IV2/view?usp=sharing">[Slides]</a> &emsp;&emsp;
-  <a href="https://youtu.be/KaIMMamhKsU">[Video]</a> -->
-</div>
-<br>
-<div align="center">
-  <img width="1000" alt="teaser" src="assets/archi.svg"/>
-</div>
-
-> Abstract: Flow matching is a recent framework to train generative models that exhibits impressive empirical performance while being relatively easier to train compared with diffusion-based models. Despite its advantageous properties, prior methods still face the challenges of expensive computing and a large number of function evaluations of off-the-shelf solvers in the pixel space. Furthermore, although latent-based generative methods have shown great success in recent years, this particular model type remains underexplored in this area. In this work, we propose to apply flow matching in the latent spaces of pretrained autoencoders, which offers improved computational efficiency and scalability for high-resolution image synthesis. This enables flow-matching training on constrained computational resources while maintaining their quality and flexibility. Additionally, our work stands as a pioneering contribution in the integration of various conditions into flow matching for conditional generation tasks, including label-conditioned image generation, image inpainting, and semantic-to-image generation. Through extensive experiments, our approach demonstrates its effectiveness in both quantitative and qualitative results on various datasets, such as CelebA-HQ, FFHQ, LSUN Church & Bedroom, and ImageNet. We also provide a theoretical control of the Wasserstein-2 distance between the reconstructed latent flow distribution and true data distribution, showing it is upper-bounded by the latent flow matching objective.
-
-Details of the model architectures and experimental results can be found in [our following paper](https://arxiv.org/abs/2307.08698):
-
-```bibtex
-@article{dao2023flow,
-  title={Flow matching in latent space},
-  author={Dao, Quan and Phung, Hao and Nguyen, Binh and Tran, Anh},
-  journal={arXiv preprint arXiv:2307.08698},
-  year={2023}
-}
-```
-
-**Please CITE** our paper whenever this repository is used to help produce published results or incorporated into other software.
-
-**News**
-- [24th Dec, 2024] Add pretrained checkpoints for ADM experiments in [Testing](#testing) table.
-
-## Installation
-
-Python `3.10` and Pytorch `1.13.1`/`2.0.0` are used in this implementation.
-Please install required libraries:
+## Env
 
 ```
+conda create -n LFM python=3.10
+conda activate LFM
 pip install -r requirements.txt
 ```
 
-## Dataset preparation
+TODO: 还没测完
+
+## Dataset preparation (LFM)
 
 For CelebA HQ 256, FFHQ 256 and LSUN, please check [NVAE's instructions](https://github.com/NVlabs/NVAE#set-up-file-paths-and-data) out.
 
