@@ -425,6 +425,7 @@ class UNetModel(nn.Module):
         use_scale_shift_norm=False,
         resblock_updown=False,
         use_new_attention_order=False,
+        notime=False, # sqa
     ):
         super().__init__()
 
@@ -446,6 +447,11 @@ class UNetModel(nn.Module):
         self.num_heads = num_heads
         self.num_head_channels = num_head_channels
         self.num_heads_upsample = num_heads_upsample
+        self.notime = notime
+
+        if self.notime: 
+            for _ in range(10):
+                print("no time !!")
 
         self.count_nfe = False
         self.nfe = 0
@@ -638,6 +644,8 @@ class UNetModel(nn.Module):
             if isinstance(self.time_embed[0], nn.Linear)
             else self.time_embed(th.log(timesteps))
         )
+
+        if self.notime: emb = emb * 0
 
         if self.num_classes is not None:
             assert y.shape == (x.shape[0],)

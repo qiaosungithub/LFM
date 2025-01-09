@@ -19,6 +19,7 @@ def create_network(config):
 
 def get_flow_model(config):
     if config.layout:
+        raise NotADirectoryError("看对了")
         model = UNetModelAttn(
             image_size=config.image_size // 8,
             in_channels=config.num_in_channels,
@@ -65,6 +66,7 @@ def get_flow_model(config):
             use_scale_shift_norm=config.use_scale_shift_norm,
             resblock_updown=config.resblock_updown,
             use_new_attention_order=config.use_new_attention_order,
+            notime=config.notime,
         )
 
     return model

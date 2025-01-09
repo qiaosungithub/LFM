@@ -8,7 +8,8 @@ accelerate launch --num_processes 1 train_flow_latent.py --exp celeb256_f8_adm \
     --nf 256 --ch_mult 1 2 2 2 --attn_resolution 16 8 --num_res_blocks 2 \
     --lr 2e-5 --scale_factor 0.18215 \
     --save_content --save_content_every 10 \
-    --use_origin_adm
+    --use_origin_adm \
+    # --notime \
 
 
 ############################################### ADM ~ FFHQ 256 ###############################################
@@ -53,15 +54,16 @@ accelerate launch --num_processes 1 train_flow_latent.py --exp celeb256_f8_adm \
 #     --use_grad_checkpointing \
 
 
-############################################### DiT-L/2 ~ CelebA 256 ###############################################
-accelerate launch --num_processes 1 train_flow_latent.py --exp celeb_f8_dit \
-    --dataset celeba_256 --datadir data/celeba/celeba-lmdb \
-    --batch_size 32 --num_epoch 500 \
-    --image_size 256 --num_in_channels 4 --num_out_channels 4 \
-    --nf 256 --ch_mult 1 2 3 4 --attn_resolution 16 8 4 --num_res_blocks 2 \
-    --lr 2e-4 --scale_factor 0.18215 --no_lr_decay \
-    --model_type DiT-L/2 --num_classes 1 --label_dropout 0. \
-    --save_content --save_content_every 10 \
+# ############################################### DiT-L/2 ~ CelebA 256 ###############################################
+# accelerate launch --num_processes 1 train_flow_latent.py --exp celeb_f8_dit \
+#     --dataset celeba_256 --datadir data/celeba/celeba-lmdb \
+#     --batch_size 32 --num_epoch 500 \
+#     --image_size 256 --num_in_channels 4 --num_out_channels 4 \
+#     --nf 256 --ch_mult 1 2 3 4 --attn_resolution 16 8 4 --num_res_blocks 2 \
+#     --lr 2e-4 --scale_factor 0.18215 --no_lr_decay \
+#     --model_type DiT-L/2 --num_classes 1 --label_dropout 0. \
+#     --save_content --save_content_every 10 \
+#     # --notime \
 
 
 ############################################### DiT-L/2 ~ FFHQ 256 ###############################################

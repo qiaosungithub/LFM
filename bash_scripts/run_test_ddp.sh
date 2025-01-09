@@ -20,6 +20,7 @@ if [[ "${USE_ORIGIN_ADM}" = true ]]; then
         --method ${METHOD} --num_steps ${STEPS} \
         --compute_fid --output_log $OUTPUT_LOG \
         --model_type ${MODEL_TYPE} --use_origin_adm \
+        # --notime \
         # --use_karras_samplers \
 
 else

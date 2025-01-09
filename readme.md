@@ -37,6 +37,8 @@ bash bash_scripts/run.sh
 
 Simply comment/uncomment the relevant commands and run `bash run.sh`.
 
+- If run no time condition, add in `run.sh` `--notime`.
+
 ## Testing
 
 ### Pretrained model
@@ -73,5 +75,7 @@ STEPS=50
 ```.bash
 bash bash_scripts/run_test_ddp.sh test_args/celeb256_adm.txt
 ```
+
+- If run no time condition, add in `run_test_ddp.sh` `--notime`.
 
 Here we can use multiple gpus, change this in [bash_scripts/run_test_ddp.sh](./bash_scripts/run_test_ddp.sh).

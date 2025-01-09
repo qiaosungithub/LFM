@@ -264,6 +264,8 @@ if __name__ == "__main__":
     parser.add_argument("--use_scale_shift_norm", type=bool, default=True) # 否则不能跑
     parser.add_argument("--resblock_updown", type=bool, default=False) # 否则不能跑
     parser.add_argument("--use_new_attention_order", type=bool, default=False) # 否则不能跑
+    
+    parser.add_argument("--notime", action="store_true", default=False) # sqa
 
     args = parser.parse_args()
     main(args)

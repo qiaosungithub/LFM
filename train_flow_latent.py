@@ -334,5 +334,7 @@ if __name__ == "__main__":
     parser.add_argument("--save_ckpt_every", type=int, default=25, help="save ckpt every x epochs")
     parser.add_argument("--plot_every", type=int, default=5, help="plot every x epochs")
 
+    parser.add_argument("--notime", action="store_true", default=False) # sqa
+
     args = parser.parse_args()
     train(args)
